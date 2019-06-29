@@ -31,13 +31,6 @@ Not a game, more of an experiment that could lead to a game …
 
 Those previous versions are deprecated in favor of this one - [topheman/playground](https://github.com/topheman/playground). I upgraded some dependencies and patched the code so it would work with the latest version of node.
 
-## Next
-
-I coded the [v1](https://github.com/topheman/playground1) about a year ago, and now I decided to refactor it so that it could be a sort of a boilerplate for some other games.
-
-Take it, make your own games and tell me about it !
-
-
 ## Notes
 
 When you'll browse the code, you'll see that there is a connection/disconnetion routine on the sockets which makes sure to disconnect any mobile client which has more than one socket opened (to prevent multiple dead balls). This was a tricky part, playing with the express session and the socket.io handshake :-) 
