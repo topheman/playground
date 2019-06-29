@@ -9,8 +9,10 @@ module.exports = function(app) {
         requirejs.config({nodeRequire: require});
 
         var common = requirejs('./app/public/src/js/custom/common.js');
+
+        var name = require("../../package").name;
         
-        res.render('desktop', { title : "Playground 2.0", stage : common.stage });
+        res.render('desktop', { title : name, stage : common.stage });
     });
     
 };

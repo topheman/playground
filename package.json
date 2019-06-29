@@ -1,8 +1,8 @@
 {
-  "name": "playground2",
+  "name": "topheman-playground",
   "repository": {
     "type": "git",
-    "url": "https://github.com/topheman/playground2.git"
+    "url": "https://github.com/topheman/playground.git"
   },
   "private": true,
   "scripts": {
