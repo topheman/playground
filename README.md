@@ -13,7 +13,7 @@ Not a game, more of an experiment that could lead to a game …
 
 **On your phone, you will likely need to enable "Motion and Orientation" in Settings > Safari (or chrome ...)**
 
-![Topheman Playground](https://raw.github.com/topheman/playground2/master/app/public/src/css/img/topheman-playground-bandeau.png)
+![Topheman Playground](https://raw.github.com/topheman/playground/master/app/public/src/css/img/topheman-playground-bandeau.png)
 
 ## Install
 

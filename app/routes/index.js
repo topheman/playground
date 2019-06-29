@@ -5,7 +5,9 @@
 module.exports = function(app) {
 
     app.get('/', function(req, res){
-        res.render('index', { title : "Playground 2.0" });
+
+        var name = require("../../package").name;
+        res.render('index', { title : name });
     });
     
 };

@@ -4,7 +4,8 @@
 module.exports = function(app) {
 
     app.get('/mobile', function(req, res){
-        res.render('mobile', {title : "Playground 2.0"});
+        var name = require("../../package").name;
+        res.render('mobile', {title : name});
     });
     
 };
