@@ -1,4 +1,4 @@
-define(['custom/common','utils/requestAnimFrame','utils/blockedPopup'],function(common,undefined,blockedPopup){
+define(['custom/common','utils/requestAnimFrame'],function(common){
     
     var mobile;
     
@@ -17,30 +17,6 @@ define(['custom/common','utils/requestAnimFrame','utils/blockedPopup'],function(
         
         document.getElementById('modal-title').innerHTML = "You've been disconnected";
         document.getElementById('modal-message').innerHTML = '<p>You have another tab/window in your browser running a playground controller.</p><p><a href="javascript:window.location.reload()">Click here to reconnect</a></p>';
-        
-    }
-    
-    function displayRemoteTiltInfo(){
-        
-        var modal = document.getElementById('openModal');
-        
-        modal.className = "show";
-        
-        document.getElementById('modal-title').innerHTML = "Emulator mode";
-        document.getElementById('modal-message').innerHTML = "<p>Your browser doesn't support the accelerometer, if you are on desktop, you still can try with the device motion emulator.</p><p>Make sure to <strong>allow the popup</strong> to be able to control the device motion emulator</p><h2 class='button'>OK</h2>";
-        
-        
-        var removeModal = function(){
-            
-            var modal = document.getElementById('openModal');
-            
-            modal.className = "";
-            
-            modal.removeEventListener('click',removeModal);
-            
-        };
-        
-        modal.addEventListener('click', removeModal, false);
         
     }
 
@@ -106,18 +82,6 @@ define(['custom/common','utils/requestAnimFrame','utils/blockedPopup'],function(
         },
 
         init : function (){
-            //do not execute on remotetilt frame
-            if(common.isRemoteTiltEnabled())
-                return;
-            //display modal info if remoteTilt was added AND if its popup was blocked
-            if(window.remoteTiltAdded === true){
-                blockedPopup.isBlocked(remoteTiltWindow,function(){
-                    displayRemoteTiltInfo();
-                    blockedPopup.onUnblock(remoteTiltWindow,function(){
-                        document.getElementById('openModal').className = "";
-                    });
-                });
-            }
             //do not execute if all the features needed aren't here
             if( (!window.DeviceMotionEvent && !window.DeviceOrientationEvent) || (!("ontouchstart" in window) && !window.DeviceMotionEvent) || (!("ontouchstart" in window) && !window.DeviceOrientationEvent) ) {
                 alert('Please activate "motion and orientation" feature in\nSettings > Safari or Settings > Chrome')
