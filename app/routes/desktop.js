@@ -10,8 +10,6 @@ module.exports = function(app) {
 
         var common = requirejs('./app/public/src/js/custom/common.js');
         
-        var mobileUrl = "http" + (app.get('host') === "topheman-playground.herokuapp.com" ? "s" : "") + "://"+app.get('host')+"/mobile";
-        
         res.render('desktop', { title : "Playground 2.0", stage : common.stage });
     });
     
