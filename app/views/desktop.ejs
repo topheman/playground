@@ -9,10 +9,10 @@
     <body>
         <span id="forkongithub"><a href="https://github.com/topheman/playground2" target="_blank">Fork me on GitHub</a></span>
         <div id="explanation">
-            <p><%- imgQrCode %><a href="./">Home page</a></p>
+            <p><div id="qrcode"><div style="width: 128px;height: 128px;background: white;float: left;margin: 0 15px 15px 0;"></div></div><a href="./">Home page</a></p>
             <p><strong>Snap this QR-Code with your smartphone</strong> and <strong>get control of the ball</strong> which is on your desktop computer from your mobile device !</p>
             <p>You can connect with <strong>multiple devices</strong>.</p>
-            <p>Here is the url to connect if you can't read the QR-Code : <br><strong><%= mobileUrl %></strong></p>
+            <p>Here is the url to connect if you can't read the QR-Code : <br><strong id="mobile-url"></strong></p>
         </div>
         <div style="clear:both"></div>
         <canvas id="playground" width="<%= stage.width %>" height="<%= stage.height %>"></canvas>
@@ -41,6 +41,20 @@
         <footer id="footer">
             <p>© 2012 - <%= new Date().getFullYear() %> <a href="https://github.com/topheman/playground2">Topheman Playground</a> - Christophe Rosset - more on <a href="http://labs.topheman.com/" title="All my projects on labs.topheman.com">labs.topheman.com</a></p>
         </footer>
+        <script src="./js/vendor/qrcode.min.js" type="text/javascript"></script>
+        <script>
+        function prepareQRCode() {
+            var mobileUrl = location.origin + "/mobile";
+            document.getElementById("mobile-url").innerText = mobileUrl;
+            document.getElementById("qrcode").innerHTML = "";
+            new QRCode(document.getElementById("qrcode"), {
+                text: mobileUrl,
+                width: 128,
+                height: 128
+            });
+        }
+        prepareQRCode();
+        </script>
         <script src="./js/vendor/require.js" type="text/javascript"></script>
         <script type="text/javascript">
             require(['./js/require.config'], function(config) {

@@ -13,21 +13,20 @@
   },
   "version": "2.3.0",
   "dependencies": {
-    "express": "~3.3.4",
-    "socket.io": "~1.0.0",
-    "ejs": "*",
-    "requirejs": "~2.1.8",
-    "qrcode-npm": "0.0.3",
     "cookie": "~0.1.0",
-    "ent": "~0.1.0"
+    "ejs": "*",
+    "ent": "~0.1.0",
+    "express": "~3.3.4",
+    "requirejs": "~2.1.8",
+    "socket.io": "~1.0.0"
   },
   "devDependencies": {
-    "matchdep": ">=0.1.1",
     "grunt": ">=0.4.0",
-    "grunt-contrib-requirejs": ">=0.4.1",
-    "grunt-contrib-cssmin": ">=0.6.1",
     "grunt-contrib-clean": ">=0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": ">=0.4.1",
-    "grunt-contrib-concat": "~0.3.0"
+    "grunt-contrib-cssmin": ">=0.6.1",
+    "grunt-contrib-requirejs": ">=0.4.1",
+    "matchdep": ">=0.1.1"
   }
 }
