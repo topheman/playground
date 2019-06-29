@@ -12,15 +12,7 @@ module.exports = function(app) {
         
         var mobileUrl = "http" + (app.get('host') === "topheman-playground.herokuapp.com" ? "s" : "") + "://"+app.get('host')+"/mobile";
         
-        var qrCode = null;
-        var qrCode = require('qrcode-npm');
-        var qr = qrCode.qrcode(4, 'M');
-        qr.addData(mobileUrl);
-        qr.make();
-
-        var imgQrCode = qr.createImgTag(5);    // creates an <img> tag as text
-        
-        res.render('desktop', { title : "Playground 2.0", stage : common.stage, imgQrCode : imgQrCode, mobileUrl : mobileUrl });
+        res.render('desktop', { title : "Playground 2.0", stage : common.stage });
     });
     
 };
