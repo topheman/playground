@@ -84,7 +84,7 @@ define(['custom/common','utils/requestAnimFrame'],function(common){
         init : function (){
             //do not execute if all the features needed aren't here
             if( (!window.DeviceMotionEvent && !window.DeviceOrientationEvent) || (!("ontouchstart" in window) && !window.DeviceMotionEvent) || (!("ontouchstart" in window) && !window.DeviceOrientationEvent) ) {
-                alert('Please activate "motion and orientation" feature in\nSettings > Safari or Settings > Chrome')
+                alert('Please activate "Motion and Orientation" feature in\nSettings > Safari or Settings > Chrome')
                 return;
             }
             var reduceInfos = function(n){
