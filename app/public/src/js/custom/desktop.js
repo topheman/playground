@@ -44,7 +44,7 @@ define(['custom/common','utils/requestAnimFrame','vendor/Ball'],function(common,
             Chat.updateUsers(data.desktops);
             Chat.addMessage(data.message);
             //only show this message to the other desktops already connected
-            if(socket.socket.sessionid !== data.socketId){
+            if(socket.io.engine.id !== data.socketId){
                 addMessage("A new desktop has connected, reconnecting all mobile devices ...",2);
             }
         });
