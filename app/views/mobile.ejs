@@ -41,7 +41,8 @@
                     window.remoteTiltAdded = true;
                 }
                 require(['./js/require.config'], function(config) {
-                    require(dependencies, function(mobile) {
+                    require(dependencies, function(mobile, io) {
+                        window.io = io; // patch to be compatible with v1
                         mobile.init();
                     });
                 });

@@ -119,8 +119,10 @@ define(['custom/common','utils/requestAnimFrame','utils/blockedPopup'],function(
                 });
             }
             //do not execute if all the features needed aren't here
-            if( (!window.DeviceMotionEvent && !window.DeviceOrientationEvent) || (!("ontouchstart" in window) && !window.DeviceMotionEvent) || (!("ontouchstart" in window) && !window.DeviceOrientationEvent) )
+            if( (!window.DeviceMotionEvent && !window.DeviceOrientationEvent) || (!("ontouchstart" in window) && !window.DeviceMotionEvent) || (!("ontouchstart" in window) && !window.DeviceOrientationEvent) ) {
+                alert('Please activate "motion and orientation" feature in\nSettings > Safari or Settings > Chrome')
                 return;
+            }
             var reduceInfos = function(n){
                 return Math.floor(n*100000)/100000;
             };
