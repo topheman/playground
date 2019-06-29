@@ -11,8 +11,9 @@ module.exports = function(app) {
         var common = requirejs('./app/public/src/js/custom/common.js');
 
         var name = require("../../package").name;
+        var version = require("../../package").version;
         
-        res.render('desktop', { title : name, stage : common.stage });
+        res.render('desktop', { title : name, stage : common.stage, version: version });
     });
     
 };
