@@ -7,14 +7,11 @@ var express = require('express')
   , fs = require('fs')
   , path = require('path');
 
-var settings = require('./app/settings');
-var port = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 var app = express();
 
 // all environments
 app.configure(function(){
-    app.set('host', settings.getHost());
-    app.set('port', port);
     app.set('views', __dirname + '/app/views');
     app.set('view engine', 'ejs');
     app.use(express.favicon( __dirname + '/app/public/src/favicon.ico'));
@@ -40,9 +37,9 @@ fs.readdir('./app/routes', function(err, files){
     });
 });
 
-var server = http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-  console.log('Host set on http://' + app.get('host'));
+var server = http.createServer(app).listen(PORT, function(){
+  var address = 'http://' + (process.env.NODE_ENV === "development" ? require('my-local-ip')() : "localhost") + ":" + PORT;
+  console.log('Server started on ' + address);
 });
 var io = require('socket.io').listen(server, {log: false});
 
