@@ -6,7 +6,8 @@
   },
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "NODE_ENV=development nodemon app.js"
   },
   "engines": {
     "node": "^10.0.0"
@@ -19,5 +20,9 @@
     "express": "~3.3.4",
     "requirejs": "~2.1.8",
     "socket.io": "~1.0.0"
+  },
+  "devDependencies": {
+    "my-local-ip": "^1.0.0",
+    "nodemon": "^1.19.1"
   }
 }
