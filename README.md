@@ -17,8 +17,27 @@ Not a game, more of an experiment that could lead to a game …
 
 ## Install
 
-* `yarn`
-* `node app.js 192.168.1.2:3000` (192.168.1.2:3000 being the public IP:PORT of your node server - port by default at 3000 - this is used to create the QR-Code)
+```
+yarn
+```
+
+## Run
+
+For development:
+
+```
+npm run dev:https
+```
+
+This will start the nodejs server and launch and expose it via a secure tunnel on a public https url, thanks to ngrok.
+
+This will be necessary for testing with the accelerometer on your mobile device since the related APIs only work on https.
+
+For production:
+
+```
+npm start
+```
 
 ## Previous versions
 

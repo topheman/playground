@@ -40,6 +40,9 @@ fs.readdir('./app/routes', function(err, files){
 var server = http.createServer(app).listen(PORT, function(){
   var address = 'http://' + (process.env.NODE_ENV === "development" ? require('my-local-ip')() : "localhost") + ":" + PORT;
   console.log('Server started on ' + address);
+  if(process.env.NODE_ENV === "development" && !process.env.FORWARDED) {
+    console.log('In development mode, you will need https for accelerometer - use: `npm run dev:https`\n')
+  }
 });
 var io = require('socket.io').listen(server, {log: false});
 

@@ -7,13 +7,16 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "dev": "NODE_ENV=development nodemon app.js"
+    "dev": "NODE_ENV=development nodemon app.js",
+    "dev:https": "FORWARDED=true start-server-and-test dev :3000 dev:forward",
+    "dev:forward": "node ./bin/ngrok.js"
   },
   "engines": {
     "node": "^10.0.0"
   },
   "version": "3.0.0",
   "dependencies": {
+    "chalk": "^2.4.2",
     "cookie": "~0.1.0",
     "ejs": "*",
     "ent": "~0.1.0",
@@ -23,6 +26,8 @@
   },
   "devDependencies": {
     "my-local-ip": "^1.0.0",
-    "nodemon": "^1.19.1"
+    "ngrok": "^3.2.1",
+    "nodemon": "^1.19.1",
+    "start-server-and-test": "^1.9.1"
   }
 }
