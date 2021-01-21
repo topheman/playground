@@ -22,7 +22,7 @@
     "ent": "~0.1.0",
     "express": "~3.3.4",
     "requirejs": "~2.1.8",
-    "socket.io": "~1.0.0"
+    "socket.io": "~2.4.0"
   },
   "devDependencies": {
     "my-local-ip": "^1.0.0",
