@@ -20,7 +20,7 @@
     "cookie": "~0.1.0",
     "ejs": "*",
     "ent": "~0.1.0",
-    "express": "~3.3.4",
+    "express": "~4.17.3",
     "requirejs": "~2.1.8",
     "socket.io": "~1.0.0"
   },
